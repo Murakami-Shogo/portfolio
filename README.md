@@ -24,6 +24,10 @@ npm run dev
 npm run build
 ```
 
+## 公開URL
+
+https://murakami-shogo-portfolio.vercel.app/
+
 ## 元テンプレート
 
 [Academic Portfolio Astro](https://github.com/rubzip/academic-portfolio-astro)

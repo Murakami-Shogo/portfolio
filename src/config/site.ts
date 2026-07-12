@@ -1,7 +1,7 @@
 import type { SiteConfig, ThemeConfig, SettingsConfig, UmamiAnalyticsConfig, AnalyticsConfig } from "../types";
 
 export const SITE: SiteConfig = {
-    website: "http://localhost:4321/",
+    website: "https://murakami-shogo-portfolio.vercel.app/",
     author: "村上 彰悟",
     desc: "機械学習・深層学習（特に自然言語処理）を専門とする村上彰悟のポートフォリオ",
     title: "村上 彰悟",

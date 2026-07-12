@@ -18,6 +18,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: "https://murakami-shogo-portfolio.vercel.app",
   base: '/',
   integrations: [sitemap()],
 });
