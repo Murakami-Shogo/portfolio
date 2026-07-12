@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/ui/Icon.astro";
-import Tag from "../../components/ui/Tag.astro";
 import { SITE, PAGES } from "../../config";
 
 if (PAGES.blog.isActive === false) {
@@ -59,7 +58,11 @@ const formatDate = (date: string | undefined) => {
 
                     {post.data.tags?.length > 0 && (
                         <div class="flex gap-2 flex-wrap mb-3">
-                            {post.data.tags.map((tag: string) => <Tag name={tag} size="sm" />)}
+                            {post.data.tags.map((tag: string) => (
+                                <span class="inline-flex items-center text-[0.8rem] font-bold leading-none text-accent">
+                                    #{tag}
+                                </span>
+                            ))}
                         </div>
                     )}
 
