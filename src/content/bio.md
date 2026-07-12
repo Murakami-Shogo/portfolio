@@ -1,28 +1,28 @@
 ---
-name: "Claude Shannon"
+name: "村上 彰悟"
 avatar: "shannon.jpg"
-shortBio: "Mathematician and electrical engineer known as the 'Father of Information Theory'. Pioneer in digital computing and cryptography."
-institution: "MIT, Cambridge MA"
+shortBio: "自然言語処理に関する研究をしています。現在は、日本語テキストの難易度推定に取り組んでいます。"
+institution: "愛媛大学大学院 自然言語処理研究室 修士1年"
 ---
 
-I am a mathematician and electrical engineer best known for founding **Information Theory**. My work in the late 1940s established the theoretical foundations of modern digital communications and computing.
+愛媛大学大学院 理工学研究科 理工学専攻<br>
+数理情報プログラム 数理情報分野<br>
+[自然言語処理グループ](https://sites.google.com/view/ehime-nlp/%E3%83%9B%E3%83%BC%E3%83%A0) 自然言語処理研究室（梶原研）<br>
+修士1年
 
-## My Life
+自然言語処理を研究する大学院生です。現在は、企業との共同研究として日本語テキストの難易度推定に取り組んでいます。共同研究に関わる内容のため、詳細は本ポートフォリオでは公開していません。
 
-Born in Petoskey, Michigan on April 30, 1916, I showed an early aptitude for engineering and mathematics. After studying at the University of Michigan, I completed my PhD at MIT where I famously applied Boolean algebra to electrical circuits. My master's thesis on relay switching circuits is considered one of the most important master's theses ever written.
+学部時代には、言語学習アプリ「Duolingo」における約6,000人分の学習履歴を用いて、第二言語学習者が文中のどの単語を将来誤るかを予測する研究に取り組みました。
 
-During World War, I worked at Bell Labs on fire control systems and cryptography, which led to my seminal work in information theory.
+研究以外では、SIGNATEやKaggleなどのデータサイエンスコンペティションや、AtCoderで競技プログラミングに取り組んでいます。
 
-## Current Work
+## 専門
 
-I continue to work on various problems at the intersection of mathematics, engineering, and computer science. My interests include artificial intelligence, pattern recognition, game theory, and the fundamental limits of computation.
+- 機械学習・深層学習（特に自然言語処理）
 
-I also enjoy juggling, unicycling, and playing the clarinet - I even built a juggling machine!
+## 外部リンク
 
-## Research Interests
-
-My research focus includes: **Information Theory**, **Cryptography**, **Digital Computing**, **Artificial Intelligence**, **Game Theory**, and **Switching Circuits**.
-
----
-
-*"I am a mathematician. I am interested in the fundamental limits on the rate at which information can be transmitted."*
+- [GitHub](https://github.com/Murakami-Shogo)
+- [SIGNATE](https://user.competition.signate.jp/ja/account?tab=public)
+- [Kaggle](https://www.kaggle.com/murashou)
+- [AtCoder](https://atcoder.jp/users/Shogo_Murakami)

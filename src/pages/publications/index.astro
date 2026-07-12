@@ -1,14 +1,97 @@
 ---
-import BaseListing from "../../layouts/BaseListing.astro";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { PAGES } from "../../config";
 
 if (PAGES.publications.isActive === false) {
     return Astro.redirect("/404");
 }
+
+const publications = await getCollection("publications");
+
+const currentResearchEntry = publications.find((entry) => entry.id === "current-research");
+const undergraduateResearchEntry = publications.find((entry) => entry.id === "undergraduate-research");
+const internationalEntry = publications.find((entry) => entry.id === "international-under-review");
+
+const CurrentResearchContent = currentResearchEntry
+    ? (await render(currentResearchEntry)).Content
+    : null;
+const UndergraduateResearchContent = undergraduateResearchEntry
+    ? (await render(undergraduateResearchEntry)).Content
+    : null;
+const InternationalContent = internationalEntry
+    ? (await render(internationalEntry)).Content
+    : null;
+
+const domesticConferences = [
+    {
+        id: "jsai2026",
+        authors: "村上 彰悟, 杉山 誠治, 梶原 智之, 荒瀬 由紀.",
+        title: "第二言語学習者の単語習熟度の変化を考慮した誤り予測",
+        venueAndDate: "人工知能学会第40回全国大会 (JSAI2026), June 2026.",
+        pdfs: [
+            { label: "論文", path: "/documents/research/jsai2026-paper.pdf" },
+            { label: "ポスター", path: "/documents/research/jsai2026-poster.pdf" },
+        ],
+    },
+    {
+        id: "yans2025",
+        authors: "村上 彰悟, 杉山 誠治, 梶原 智之, 荒瀬 由紀.",
+        title: "言語学習履歴における問題文の構文的類似性を考慮した誤答予測",
+        venueAndDate: "NLP若手の会第20回シンポジウム (YANS2025), September 2025.",
+        pdfs: [
+            { label: "ポスター", path: "/documents/research/yans2025-poster.pdf" },
+        ],
+    },
+];
 ---
 
-<BaseListing
-    collection="publications"
-    title={PAGES.publications.title}
-    subtitle={PAGES.publications.subtitle}
-/>
+<BaseLayout title={PAGES.publications.title}>
+    {(PAGES.publications.title || PAGES.publications.subtitle) && (
+        <header class="page-header">
+            {PAGES.publications.title && <h1 class="page-title">{PAGES.publications.title}</h1>}
+            {PAGES.publications.subtitle && <p class="page-subtitle">{PAGES.publications.subtitle}</p>}
+        </header>
+    )}
+
+    <section class="mb-12">
+        <h2 class="title-lg mb-4">現在の研究</h2>
+        {CurrentResearchContent && <div class="prose"><CurrentResearchContent /></div>}
+    </section>
+
+    <section class="mb-12">
+        <h2 class="title-lg mb-4">学部時代の研究</h2>
+        {UndergraduateResearchContent && <div class="prose"><UndergraduateResearchContent /></div>}
+    </section>
+
+    <section class="mb-12">
+        <h2 class="title-lg mb-4">国内会議</h2>
+        <ul class="list-disc pl-5 space-y-6">
+            {domesticConferences.map((entry) => (
+                <li class="pl-1">
+                    <p>{entry.authors}</p>
+                    <p>
+                        <a href={`/publications/${entry.id}`} class="link">{entry.title}</a>
+                    </p>
+                    <p>{entry.venueAndDate}</p>
+                    <p class="flex flex-wrap gap-2 mt-1">
+                        <a href={`/publications/${entry.id}`} class="link">詳細</a>
+                        {entry.pdfs.map((pdf) => (
+                            <span class="contents">
+                                <span aria-hidden="true">/</span>
+                                <a href={pdf.path} target="_blank" rel="noopener noreferrer" class="link">
+                                    {pdf.label}
+                                </a>
+                            </span>
+                        ))}
+                    </p>
+                </li>
+            ))}
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="title-lg mb-4">国際会議</h2>
+        {InternationalContent && <div class="prose"><InternationalContent /></div>}
+    </section>
+</BaseLayout>
