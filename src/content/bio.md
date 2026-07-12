@@ -1,6 +1,6 @@
 ---
 name: "村上 彰悟"
-avatar: "shannon.jpg"
+avatar: "profile.jpg"
 shortBio: "自然言語処理に関する研究をしています。現在は、日本語テキストの難易度推定に取り組んでいます。"
 institution: "愛媛大学大学院 自然言語処理研究室 修士1年"
 ---
