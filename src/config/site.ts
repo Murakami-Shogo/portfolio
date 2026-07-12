@@ -5,7 +5,7 @@ export const SITE: SiteConfig = {
     author: "村上 彰悟",
     desc: "機械学習・深層学習（特に自然言語処理）を専門とする村上彰悟のポートフォリオ",
     title: "村上 彰悟",
-    ogImage: "shannon.webp",
+    ogImage: "profile.jpg",
     postPerPage: 5,
     favicon: "/favicon.svg",
     lang: "ja",

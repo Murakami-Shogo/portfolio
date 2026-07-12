@@ -5,7 +5,7 @@ external_url: "https://user.competition.signate.jp/ja/account?tab=public"
 
 [SIGNATEプロフィール](https://user.competition.signate.jp/ja/account?tab=public)
 
-現在のランク：**Expert**
+現在の称号：**Expert**
 
 - **SIGNATE × TECH OCEAN Student Cup 2025**
    - 参加形態：ソロ参加
