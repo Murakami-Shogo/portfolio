@@ -11,7 +11,9 @@ if (PAGES.blog.isActive === false) {
 
 export async function getStaticPaths() {
     if (PAGES.blog.isActive === false) return [];
-    const posts = await getCollection("posts");
+    const posts = (await getCollection("posts")).filter(
+        (post) => !post.data.external_url,
+    );
     const sortedPosts = posts.sort(
         (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
     );

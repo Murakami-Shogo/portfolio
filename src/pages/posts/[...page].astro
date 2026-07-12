@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import BaseListing from "../../layouts/BaseListing.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/ui/Icon.astro";
+import Tag from "../../components/ui/Tag.astro";
 import { SITE, PAGES } from "../../config";
 
 if (PAGES.blog.isActive === false) {
@@ -18,11 +20,81 @@ export async function getStaticPaths({ paginate }: any) {
 }
 
 const { page } = Astro.props;
+
+const formatDate = (date: string | undefined) => {
+    if (!date) return "";
+    const [year, month, day] = date.split("-").map(Number);
+    return `${year}年${month}月${day}日`;
+};
 ---
 
-<BaseListing
-    collection="posts"
-    title={PAGES.blog.title}
-    subtitle={PAGES.blog.subtitle}
-    page={page}
-/>
+<BaseLayout title={PAGES.blog.title}>
+    {(PAGES.blog.title || PAGES.blog.subtitle) && (
+        <header class="page-header">
+            {PAGES.blog.title && <h1 class="page-title">{PAGES.blog.title}</h1>}
+            {PAGES.blog.subtitle && <p class="page-subtitle">{PAGES.blog.subtitle}</p>}
+        </header>
+    )}
+
+    <section class="item-list">
+        {page.data.map((post: any) => (
+            <article class="card">
+                <div class="card-content">
+                    <a
+                        href={post.data.external_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="card-title"
+                    >
+                        {post.data.title}
+                    </a>
+
+                    <div class="card-meta">
+                        <span class="flex items-center gap-1">
+                            <Icon name="Calendar" size={24} />
+                            <span>{formatDate(post.data.date)}</span>
+                        </span>
+                        <span>Qiita</span>
+                    </div>
+
+                    {post.data.tags?.length > 0 && (
+                        <div class="flex gap-2 flex-wrap mb-3">
+                            {post.data.tags.map((tag: string) => <Tag name={tag} size="sm" />)}
+                        </div>
+                    )}
+
+                    {post.data.description && (
+                        <p class="body whitespace-normal break-words">{post.data.description}</p>
+                    )}
+                </div>
+
+                <div class="flex-shrink-0">
+                    <a
+                        href={post.data.external_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="card-link"
+                    >
+                        Qiitaで読む
+                    </a>
+                </div>
+            </article>
+        ))}
+    </section>
+
+    {page.lastPage > 1 && (
+        <nav class="pagination">
+            {page.url.prev ? (
+                <a href={page.url.prev} class="pagination-link">Newer</a>
+            ) : (
+                <span class="pagination-inactive">Newer</span>
+            )}
+            <span class="pagination-info">Page {page.currentPage} of {page.lastPage}</span>
+            {page.url.next ? (
+                <a href={page.url.next} class="pagination-link">Older</a>
+            ) : (
+                <span class="pagination-inactive">Older</span>
+            )}
+        </nav>
+    )}
+</BaseLayout>
