@@ -1,14 +1,35 @@
 ---
-import BaseListing from "../../layouts/BaseListing.astro";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { PAGES } from "../../config";
 
 if (PAGES.projects.isActive === false) {
     return Astro.redirect("/404");
 }
+
+const projects = await getCollection("projects");
+const signateEntry = projects.find((entry) => entry.id === "signate");
+const atcoderEntry = projects.find((entry) => entry.id === "atcoder");
+
+const SignateContent = signateEntry ? (await render(signateEntry)).Content : null;
+const AtCoderContent = atcoderEntry ? (await render(atcoderEntry)).Content : null;
 ---
 
-<BaseListing
-    title={PAGES.projects.title}
-    subtitle={PAGES.projects.subtitle}
-    collection="projects"
-/>
+<BaseLayout title={PAGES.projects.title}>
+    {(PAGES.projects.title || PAGES.projects.subtitle) && (
+        <header class="page-header">
+            {PAGES.projects.title && <h1 class="page-title">{PAGES.projects.title}</h1>}
+            {PAGES.projects.subtitle && <p class="page-subtitle">{PAGES.projects.subtitle}</p>}
+        </header>
+    )}
+
+    <section class="mb-12">
+        <h2 class="title-lg mb-4">SIGNATE</h2>
+        {SignateContent && <div class="prose"><SignateContent /></div>}
+    </section>
+
+    <section>
+        <h2 class="title-lg mb-4">AtCoder</h2>
+        {AtCoderContent && <div class="prose"><AtCoderContent /></div>}
+    </section>
+</BaseLayout>
