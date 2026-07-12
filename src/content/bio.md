@@ -2,12 +2,15 @@
 name: "村上 彰悟"
 avatar: "profile.jpg"
 shortBio: "自然言語処理に関する研究をしています。現在は、日本語テキストの難易度推定に取り組んでいます。"
-institution: "愛媛大学大学院 自然言語処理研究室 修士1年"
+institution: |-
+  愛媛大学大学院
+  自然言語処理研究室
+  修士1年
 ---
 
 愛媛大学大学院 理工学研究科 理工学専攻<br>
 数理情報プログラム 数理情報分野<br>
-[自然言語処理グループ](https://sites.google.com/view/ehime-nlp/%E3%83%9B%E3%83%BC%E3%83%A0) 自然言語処理研究室（梶原研）<br>
+<a href="https://sites.google.com/view/ehime-nlp/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank" rel="noopener noreferrer">自然言語処理グループ</a> 自然言語処理研究室（梶原研）<br>
 修士1年
 
 自然言語処理を研究する大学院生です。現在は、企業との共同研究として日本語テキストの難易度推定に取り組んでいます。共同研究に関わる内容のため、詳細は本ポートフォリオでは公開していません。

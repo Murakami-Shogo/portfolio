@@ -22,7 +22,7 @@ const { name, title, experience = [], education = [] } = cvEntry.data;
 <BaseLayout title={PAGES.cv.title}>
     <header class="page-header">
         <h1 class="page-title">{PAGES.cv.title}</h1>
-        <p class="page-subtitle">{PAGES.cv.subtitle}</p>
+        {PAGES.cv.subtitle && <p class="page-subtitle">{PAGES.cv.subtitle}</p>}
     </header>
 
     <div class="container-narrow">
@@ -59,9 +59,8 @@ const { name, title, experience = [], education = [] } = cvEntry.data;
             )
         }
 
-        <div class="prose max-w-none">
+        <div class="prose cv-content max-w-none">
             <Content />
         </div>
     </div>
 </BaseLayout>
-

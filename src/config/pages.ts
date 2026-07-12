@@ -38,7 +38,7 @@ export const PAGES: PagesConfig = {
     },
     cv: {
         title: "Curriculum Vitae",
-        subtitle: "Academic and professional history.",
+        subtitle: "",
         isActive: true,
     },
 };

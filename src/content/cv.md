@@ -1,32 +1,100 @@
 ---
-name: "Claude Shannon"
-title: "Mathematician and Electrical Engineer"
-experience:
-  - role: "Research Mathematician"
-    institution: "Bell Telephone Laboratories"
-    period: "1941 - 1972"
-    description: "Conducted groundbreaking research in information theory, cryptography, and digital computing."
-  - role: "Professor of Electrical Engineering"
-    institution: "MIT"
-    period: "1958 - 1978"
-    description: "Taught courses in information theory, switching theory, and mathematical foundations of computing."
-education:
-  - degree: "PhD in Mathematics"
-    institution: "MIT"
-    period: "1936 - 1940"
-    thesis: "An Algebra for Theoretical Genetics"
-    description: "Developed mathematical foundations for genetic inheritance."
-  - degree: "Bachelor of Science in Electrical Engineering"
-    institution: "University of Michigan"
-    period: "1932 - 1936"
+name: "村上 彰悟"
+title: ""
 ---
 
-## Skills
-- Information Theory
-- Mathematics
-- Electrical Engineering
-- Cryptography
-- Computer Science
+## 学歴
 
-## Biographical Summary
-Extra biographical notes or a summary can go here.
+### 広島県立府中高等学校
+
+- 期間：2019年4月〜2022年3月
+
+### 愛媛大学 工学部 工学科 コンピュータ科学コース
+
+- 期間：2022年4月〜2026年3月
+
+### 愛媛大学大学院 理工学研究科 理工学専攻 数理情報プログラム 数理情報分野
+
+- 期間：2026年4月〜2028年3月（修了予定）
+
+## インターンシップ
+
+### 株式会社CARTA HOLDINGS
+
+- 期間：2026年7月4日
+- 内容：CVR予測モデルの構築・改善
+
+### 株式会社ファインデックス
+
+- 期間：2024年9月2日〜2024年9月6日
+- 内容：視野の低下が一目で分かるアプリの開発
+
+## スキル
+
+### Python
+
+- 使用期間：2024年6月〜現在
+- 主な用途：授業、研究、AtCoder、SIGNATE、Kaggle
+
+### Transformers
+
+- 使用期間：2024年6月〜現在
+- 主な用途：授業、研究、SIGNATE、Kaggle
+
+### PyTorch
+
+- 使用期間：2024年6月〜現在
+- 主な用途：授業、研究、SIGNATE、Kaggle
+
+### uv
+
+- 使用期間：2024年10月〜現在
+- 主な用途：研究、SIGNATE、KaggleでのPython環境構築・依存関係管理
+
+### R
+
+- 使用期間：2026年4月〜2026年6月
+- 主な用途：授業
+
+### C#
+
+- 使用期間：2024年9月
+- 主な用途：5日間のインターンシップで、患者データの読み込みと視野の状態を可視化するグラフ描画機能を実装
+
+### C++
+
+- 使用期間：2024年4月〜2024年7月
+- 主な用途：授業での組込みシステム開発
+- 成果物：<a href="https://github.com/Murakami-Shogo/Embedded_System_Development--kitchen_timer-" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+### HTML / JavaScript / PHP
+
+- 使用期間：2024年4月〜2024年7月
+- 主な用途：授業でのWebアプリケーション開発
+- 成果物：<a href="https://github.com/Murakami-Shogo/Web_Programming" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+### SQL
+
+- 使用期間：2024年4月〜2024年7月
+- 主な用途：授業
+
+### Java
+
+- 使用期間：2023年10月〜2024年3月
+- 主な用途：授業
+
+### Scheme
+
+- 使用期間：2023年10月〜2024年3月
+- 主な用途：授業
+
+### C
+
+- 使用期間：2022年10月〜2024年3月
+- 主な用途：授業
+
+## 資格
+
+### 実用英語技能検定 準2級
+
+- 取得年月：2017年2月
