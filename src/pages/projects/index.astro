@@ -9,10 +9,14 @@ if (PAGES.projects.isActive === false) {
 
 const projects = await getCollection("projects");
 const signateEntry = projects.find((entry) => entry.id === "signate");
+const kaggleEntry = projects.find((entry) => entry.id === "kaggle");
 const atcoderEntry = projects.find((entry) => entry.id === "atcoder");
+const hackathonsEntry = projects.find((entry) => entry.id === "hackathons-and-contests");
 
 const SignateContent = signateEntry ? (await render(signateEntry)).Content : null;
+const KaggleContent = kaggleEntry ? (await render(kaggleEntry)).Content : null;
 const AtCoderContent = atcoderEntry ? (await render(atcoderEntry)).Content : null;
+const HackathonsContent = hackathonsEntry ? (await render(hackathonsEntry)).Content : null;
 ---
 
 <BaseLayout title={PAGES.projects.title}>
@@ -28,8 +32,18 @@ const AtCoderContent = atcoderEntry ? (await render(atcoderEntry)).Content : nul
         {SignateContent && <div class="prose"><SignateContent /></div>}
     </section>
 
-    <section>
+    <section class="mb-12">
+        <h2 class="title-lg mb-4">Kaggle</h2>
+        {KaggleContent && <div class="prose"><KaggleContent /></div>}
+    </section>
+
+    <section class="mb-12">
         <h2 class="title-lg mb-4">AtCoder</h2>
         {AtCoderContent && <div class="prose"><AtCoderContent /></div>}
+    </section>
+
+    <section>
+        <h2 class="title-lg mb-4">ハッカソン・コンテスト</h2>
+        {HackathonsContent && <div class="prose"><HackathonsContent /></div>}
     </section>
 </BaseLayout>
