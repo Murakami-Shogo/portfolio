@@ -46,7 +46,10 @@ const domesticConferences = [
 ];
 ---
 
-<BaseLayout title={PAGES.publications.title}>
+<BaseLayout
+    title={PAGES.publications.title}
+    description="村上 彰悟の研究業績。日本語テキストの難易度推定、第二言語学習者の誤答予測、国内会議とPACLIC40に関する研究を紹介します。"
+>
     {(PAGES.publications.title || PAGES.publications.subtitle) && (
         <header class="page-header">
             {PAGES.publications.title && <h1 class="page-title">{PAGES.publications.title}</h1>}

@@ -19,7 +19,10 @@ const AtCoderContent = atcoderEntry ? (await render(atcoderEntry)).Content : nul
 const HackathonsContent = hackathonsEntry ? (await render(hackathonsEntry)).Content : null;
 ---
 
-<BaseLayout title={PAGES.projects.title}>
+<BaseLayout
+    title={PAGES.projects.title}
+    description="村上 彰悟のコンペティション実績。SIGNATE、Kaggle、AtCoder、ハッカソン・コンテストへの参加や開発の記録を掲載しています。"
+>
     {(PAGES.projects.title || PAGES.projects.subtitle) && (
         <header class="page-header">
             {PAGES.projects.title && <h1 class="page-title">{PAGES.projects.title}</h1>}

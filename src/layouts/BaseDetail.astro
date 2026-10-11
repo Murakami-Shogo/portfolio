@@ -29,7 +29,12 @@ if (detail.extraInput) {
     meta.push({ label, value: detail.extraInput, icon });
 }
 
-const description = entry.data.description || detail.description || SITE.desc;
+const fallbackDescription = collection === "publications"
+    ? `村上 彰悟の研究「${detail.title}」について紹介します。`
+    : collection === "projects"
+        ? `村上 彰悟の「${detail.title}」に関する活動を紹介します。`
+        : `${detail.title}について紹介します。`;
+const description = entry.data.description || detail.description || fallbackDescription;
 const ogImage = entry.data.image || SITE.ogImage;
 ---
 

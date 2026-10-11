@@ -19,7 +19,10 @@ const { Content } = await render(cvEntry);
 const { name, title, experience = [], education = [] } = cvEntry.data;
 ---
 
-<BaseLayout title={PAGES.cv.title}>
+<BaseLayout
+    title={PAGES.cv.title}
+    description="村上 彰悟の経歴。愛媛大学大学院での学歴、インターンシップ、スキル、資格を掲載しています。"
+>
     <header class="page-header">
         <h1 class="page-title">{PAGES.cv.title}</h1>
         {PAGES.cv.subtitle && <p class="page-subtitle">{PAGES.cv.subtitle}</p>}

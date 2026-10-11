@@ -22,6 +22,7 @@ const themeDark = THEMES[themeDarkKey] || THEMES.dark_default;
 
 interface Props {
     title: string;
+    seoTitle?: string;
     description?: string;
     ogImage?: string;
     ogType?: "website" | "article";
@@ -30,21 +31,53 @@ interface Props {
 
 const { 
     title, 
+    seoTitle,
     description = SITE.desc, 
     ogImage = SITE.ogImage,
     ogType = "website",
     robots = "index, follow"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || SITE.website);
+const pageTitle = seoTitle ?? `${title} | ${SITE.title}`;
+const canonicalURL = new URL(Astro.url.pathname, SITE.website);
+const ogImageURL = new URL(
+    /^https?:\/\//.test(ogImage) ? ogImage : `/${ogImage.replace(/^\/+/, "")}`,
+    SITE.website,
+);
 
-const jsonLd = {
+const homeStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: SITE.author,
-    url: SITE.website,
-    jobTitle: "Professor",
-    description: SITE.desc,
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": `${SITE.website}#website`,
+            name: SITE.title,
+            alternateName: "村上彰悟",
+            url: SITE.website,
+            inLanguage: SITE.lang,
+            about: { "@id": `${SITE.website}#person` },
+        },
+        {
+            "@type": "Person",
+            "@id": `${SITE.website}#person`,
+            name: SITE.author,
+            alternateName: "村上彰悟",
+            url: SITE.website,
+            image: new URL("/profile.jpg", SITE.website).href,
+            affiliation: {
+                "@type": "CollegeOrUniversity",
+                name: "愛媛大学大学院",
+            },
+            knowsAbout: ["機械学習", "深層学習", "自然言語処理"],
+            sameAs: [
+                "https://github.com/Murakami-Shogo",
+                "https://qiita.com/Murakami_Shogo",
+                "https://atcoder.jp/users/Shogo_Murakami",
+                "https://user.competition.signate.jp/ja/account?tab=public",
+                "https://www.kaggle.com/murashou",
+            ],
+        },
+    ],
 };
 ---
 
@@ -99,30 +132,32 @@ const jsonLd = {
         </style>
 
         <!-- Canonical URL -->
-        <link rel="canonical" href={canonicalURL} />
+        {robots === "index, follow" && <link rel="canonical" href={canonicalURL} />}
 
         <!-- General Meta Tags -->
-        <title>{title} | {SITE.title}</title>
-        <meta name="title" content={`${title} | ${SITE.title}`} />
+        <title>{pageTitle}</title>
         <meta name="description" content={description} />
         <meta name="author" content={SITE.author} />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content={ogType} />
-        <meta property="og:url" content={Astro.url} />
-        <meta property="og:title" content={title} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:site_name" content={SITE.title} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={new URL(ogImage, Astro.url)} />
+        <meta property="og:image" content={ogImageURL} />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={Astro.url} />
-        <meta property="twitter:title" content={title} />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+        <meta property="twitter:image" content={ogImageURL} />
 
         <!-- Structured Data (JSON-LD) -->
-        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+        {Astro.url.pathname === "/" && (
+            <script type="application/ld+json" set:html={JSON.stringify(homeStructuredData)} />
+        )}
 
         <ClientRouter />
 

@@ -20,5 +20,7 @@ export default defineConfig({
   },
   site: "https://murakami-shogo-portfolio.vercel.app",
   base: '/',
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) => !/^\/(?:404(?:\.html)?|dev-tools|talks|teaching|tags)(?:\/|$)/.test(new URL(page).pathname),
+  })],
 });
