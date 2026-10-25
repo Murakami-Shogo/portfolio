@@ -697,6 +697,22 @@ a:hover,
     margin-top: 0;
 }
 
+.cv-content > h4 {
+    margin: 1.25rem 0 0.35rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.cv-content > h3 + h4 {
+    margin-top: 0.75rem;
+}
+
+.cv-content > h4 + ul {
+    margin-top: 0;
+}
+
 /* Competitions-only profile summary and responsive history table */
 .competition-profile-grid {
     display: grid;

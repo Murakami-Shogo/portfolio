@@ -51,67 +51,117 @@ title: ""
 
 ## スキル
 
-### Python
+### プログラミング言語
 
-- 使用期間：2024年6月〜現在
+#### Python
+
 - 主な用途：授業、研究、AtCoder、SIGNATE、Kaggle
 
-### Transformers
+#### R
 
-- 使用期間：2024年6月〜現在
-- 主な用途：授業、研究、SIGNATE、Kaggle
-
-### PyTorch
-
-- 使用期間：2024年6月〜現在
-- 主な用途：授業、研究、SIGNATE、Kaggle
-
-### uv
-
-- 使用期間：2024年10月〜現在
-- 主な用途：研究、SIGNATE、KaggleでのPython環境構築・依存関係管理
-
-### R
-
-- 使用期間：2026年4月〜2026年6月
 - 主な用途：授業
 
-### C#
+#### C#
 
-- 使用期間：2024年9月
 - 主な用途：5日間のインターンシップで、患者データの読み込みと視野の状態を可視化するグラフ描画機能を実装
 
-### C++
+#### C++
 
-- 使用期間：2024年4月〜2024年7月
 - 主な用途：授業での組込みシステム開発
 - 成果物：<a href="https://github.com/Murakami-Shogo/Embedded_System_Development--kitchen_timer-" target="_blank" rel="noopener noreferrer">GitHub</a>
 
-### HTML / JavaScript / PHP
+#### C
 
-- 使用期間：2024年4月〜2024年7月
+- 主な用途：授業
+
+#### Java
+
+- 主な用途：授業
+
+#### JavaScript
+
 - 主な用途：授業でのWebアプリケーション開発
 - 成果物：<a href="https://github.com/Murakami-Shogo/Web_Programming" target="_blank" rel="noopener noreferrer">GitHub</a>
 
-### SQL
+#### PHP
 
-- 使用期間：2024年4月〜2024年7月
+- 主な用途：授業でのWebアプリケーション開発
+- 成果物：<a href="https://github.com/Murakami-Shogo/Web_Programming" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+#### Scheme
+
 - 主な用途：授業
 
-### Java
+### 機械学習・深層学習
 
-- 使用期間：2023年10月〜2024年3月
-- 主な用途：授業
+#### PyTorch
 
-### Scheme
+- 主な用途：研究、SIGNATE、Kaggle
 
-- 使用期間：2023年10月〜2024年3月
-- 主な用途：授業
+#### Hugging Face Transformers
 
-### C
+- 主な用途：研究、SIGNATE、Kaggle
 
-- 使用期間：2022年10月〜2024年3月
-- 主な用途：授業
+#### scikit-learn
+
+- 主な用途：研究、SIGNATE、Kaggle
+
+#### pandas
+
+- 主な用途：研究、SIGNATE、Kaggle
+
+#### NumPy
+
+- 主な用途：研究、SIGNATE、Kaggle
+
+#### Optuna
+
+- 主な用途：研究、SIGNATE、Kaggle
+
+### 開発ツール・環境
+
+#### Git / GitHub
+
+- 主な用途：コード管理、チーム開発
+
+#### uv
+
+- 主な用途：研究、SIGNATE、KaggleでのPython環境構築・依存関係管理
+
+#### Codex
+
+- 主な用途：研究・個人開発での実装支援
+
+#### Claude Code
+
+- 主な用途：インターンでの開発・実装支援
+
+#### Google Antigravity
+
+- 主な用途：授業でのWebアプリ開発
+
+### その他の技術
+
+#### AWS
+
+- 主な用途：RAGを組み込んだアプリ開発
+
+#### Snowflake
+
+- 主な用途：インターンでのデータ基盤構築・分析・可視化
+
+#### BigQuery
+
+- 主な用途：インターンでのデータ抽出・集計・分析
+
+#### SQL
+
+- 主な用途：授業、インターンでのデータ抽出・集計・分析
+
+#### HTML
+
+- 主な用途：授業でのWebアプリケーション開発
+- 成果物：<a href="https://github.com/Murakami-Shogo/Web_Programming" target="_blank" rel="noopener noreferrer">GitHub</a>
 
 ## 資格
 
